@@ -10,6 +10,7 @@
 
 - [Blink](./VHDL/Blink/)
 - [ALU](./VHDL/ALU/)
+- [Encoder](./VHDL/Encoder/)
 
 # Tools
 

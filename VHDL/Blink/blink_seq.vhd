@@ -15,33 +15,10 @@ architecture Behavioral of blink_seq is
   signal pulse_sig : natural range 0 to 3;
 begin
 
-  process (pulse_sig)
-  begin
-    case pulse_sig is
-      when 0 =>
-							leds(0) <= '1';
-                leds(1) <= '0';
-					 leds(2) <= '0';
-					 leds(3) <= '0';
-
-      when 1 =>
-					leds(0) <= '0';
-                leds(1) <= '1';
-					 leds(2) <= '0';
-					 leds(3) <= '0';
-
-      when 2 =>
-					leds(0) <= '0';
-                leds(1) <= '0';
-					 leds(2) <= '1';
-					 leds(3) <= '0';
-		when 3 =>
-					leds(0) <= '0';
-                leds(1) <= '0';
-					 leds(2) <= '0';
-					 leds(3) <= '1';
-    end case;
-  end process;
+  leds <=   "1000" when pulse_sig = 0 else
+			"0100" when pulse_sig = 1 else
+			"0010" when pulse_sig = 2 else
+			"0001" when pulse_sig = 3;
 
   process (clk)
   begin
